@@ -10,17 +10,15 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/vuluu2k/remember_fullstack/handler"
 )
 
 func main() {
 	log.Println("Starting server...")
 	router := gin.Default()
 
-	router.GET("api/auth", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "Hello World!",
-		})
-	})
+	handler.NewHandler(&handler.Config{R: router})
+
 	svr := &http.Server{
 		Addr:    ":8080",
 		Handler: router,

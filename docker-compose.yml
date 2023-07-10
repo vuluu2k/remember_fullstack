@@ -25,7 +25,7 @@ services:
       - "8080"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.account.rule=Host(`dev2000.test`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.remember.rule=Host(`dev2000.test`) && PathPrefix(`/api`)"
     environment:
       - ENV=dev
     volumes:
