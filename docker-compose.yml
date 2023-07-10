@@ -21,6 +21,7 @@ services:
       context: ./server
       target: builder
     image: remember-api
+    env_file: .env.dev
     expose:
       - "8080"
     labels:

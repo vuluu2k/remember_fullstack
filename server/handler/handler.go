@@ -2,6 +2,7 @@ package handler
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +16,7 @@ type Config struct {
 func NewHandler(c *Config) {
 	h := &Handler{}
 
-	g := c.R.Group("api/auth")
+	g := c.R.Group(os.Getenv("AUTH_API_URL"))
 	g.GET("/me", h.Me)
 	g.POST("/sign-up", h.SignUp)
 	g.POST("/sign-in", h.SignIn)
