@@ -5,12 +5,14 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/vuluu2k/remember_fullstack/model"
 )
 
 type Handler struct{}
 
 type Config struct {
-	R *gin.Engine
+	R  *gin.Engine
+	US *model.UserService
 }
 
 func NewHandler(c *Config) {
