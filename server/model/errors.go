@@ -67,30 +67,30 @@ func NewBadRequest(reason string) *Error {
 	}
 }
 
-func NewConflict(reason string) *Error {
+func NewConflict(name string, value string) *Error {
 	return &Error{
 		Type:    Conflict,
-		Message: reason,
+		Message: fmt.Sprintf("resource: %v with value: %v already exits", name, value),
 	}
 }
 
-func NewInternal(reason string) *Error {
+func NewInternal() *Error {
 	return &Error{
 		Type:    Internal,
-		Message: reason,
+		Message: fmt.Sprintf("Internal sever error."),
 	}
 }
 
-func NewNotFound(reason string) *Error {
+func NewNotFound(name string, value string) *Error {
 	return &Error{
 		Type:    NotFound,
-		Message: reason,
+		Message: fmt.Sprintf("resource: %v with value: %v not found", name, value),
 	}
 }
 
-func NewPayloadTooLarge(reason string) *Error {
+func NewPayloadTooLarge(maxBodySize int64, contentLength int64) *Error {
 	return &Error{
 		Type:    PayloadTooLarge,
-		Message: reason,
+		Message: fmt.Sprintf("Max payload size of %v exceeded. Actual payload size: %v", maxBodySize, contentLength),
 	}
 }
