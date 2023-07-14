@@ -1,11 +1,15 @@
 package model
 
-import "github.com/google/uuid"
+import (
+	"context"
+
+	"github.com/google/uuid"
+)
 
 type UserService interface {
-	Get(uid uuid.UUID) (*User, error)
+	Get(ctx context.Context, uid uuid.UUID) (*User, error)
 }
 
 type UserRepository interface {
-	FindById(uid uuid.UUID) (*User, error)
+	FindById(ctx context.Context, uid uuid.UUID) (*User, error)
 }

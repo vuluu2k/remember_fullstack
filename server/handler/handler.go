@@ -8,7 +8,9 @@ import (
 	"github.com/vuluu2k/remember_fullstack/model"
 )
 
-type Handler struct{}
+type Handler struct {
+	UserService model.UserService
+}
 
 type Config struct {
 	R  *gin.Engine
