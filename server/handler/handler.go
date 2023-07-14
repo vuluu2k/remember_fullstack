@@ -13,12 +13,14 @@ type Handler struct {
 }
 
 type Config struct {
-	R  *gin.Engine
-	US *model.UserService
+	R           *gin.Engine
+	UserService *model.UserService
 }
 
 func NewHandler(c *Config) {
-	h := &Handler{}
+	h := &Handler{
+		UserService: c.UserService,
+	}
 
 	g := c.R.Group(os.Getenv("AUTH_API_URL"))
 	g.GET("/me", h.Me)
@@ -29,12 +31,6 @@ func NewHandler(c *Config) {
 	g.POST("/image", h.Image)
 	g.DELETE("/image", h.DeleteImage)
 	g.PUT("/details", h.Details)
-}
-
-func (h *Handler) Me(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": "It's me",
-	})
 }
 
 func (h *Handler) SignUp(c *gin.Context) {
