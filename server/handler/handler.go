@@ -19,7 +19,7 @@ type Config struct {
 
 func NewHandler(c *Config) {
 	h := &Handler{
-		UserService: c.UserService,
+		UserService: *c.UserService,
 	}
 
 	g := c.R.Group(os.Getenv("AUTH_API_URL"))
