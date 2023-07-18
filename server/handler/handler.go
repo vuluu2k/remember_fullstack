@@ -14,12 +14,12 @@ type Handler struct {
 
 type Config struct {
 	R           *gin.Engine
-	UserService *model.UserService
+	UserService model.UserService
 }
 
 func NewHandler(c *Config) {
 	h := &Handler{
-		UserService: *c.UserService,
+		UserService: c.UserService,
 	}
 
 	g := c.R.Group(os.Getenv("AUTH_API_URL"))

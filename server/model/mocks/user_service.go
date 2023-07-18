@@ -8,15 +8,21 @@ import (
 	"github.com/vuluu2k/remember_fullstack/model"
 )
 
+// MockUserService is a mock type for model.UserService
 type MockUserService struct {
 	mock.Mock
 }
 
+// Get is mock of UserService Get
 func (m *MockUserService) Get(ctx context.Context, uid uuid.UUID) (*model.User, error) {
+	// args that will be passed to "Return" in the tests, when function
+	// is called with a uid. Hence the name "ret"
 	ret := m.Called(ctx, uid)
-	var r0 *model.User
 
+	// first value passed to "Return"
+	var r0 *model.User
 	if ret.Get(0) != nil {
+		// we can just return this if we know we won't be passing function to "Return"
 		r0 = ret.Get(0).(*model.User)
 	}
 
