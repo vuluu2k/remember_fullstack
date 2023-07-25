@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/vuluu2k/remember_fullstack/model"
-	"github.com/vuluu2k/remember_fullstack/model/apperrors"
+	"github.com/vuluu2k/remember_fullstack/server/model"
+	"github.com/vuluu2k/remember_fullstack/server/model/apperrors"
 )
 
 func (h *Handler) Me(c *gin.Context) {

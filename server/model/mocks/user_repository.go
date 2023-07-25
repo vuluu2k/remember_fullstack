@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/mock"
-	"github.com/vuluu2k/remember_fullstack/model"
+	"github.com/vuluu2k/remember_fullstack/server/model"
 )
 
 type MockUserRepository struct {

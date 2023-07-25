@@ -5,7 +5,7 @@ import (
 
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/mock"
-	"github.com/vuluu2k/remember_fullstack/model"
+	"github.com/vuluu2k/remember_fullstack/server/model"
 )
 
 // MockUserService is a mock type for model.UserService

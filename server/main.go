@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/vuluu2k/remember_fullstack/handler"
+	"github.com/vuluu2k/remember_fullstack/server/handler"
 )
 
 func main() {

@@ -1,4 +1,4 @@
-module github.com/vuluu2k/remember_fullstack
+module github.com/vuluu2k/remember_fullstack/server
 
 go 1.20
 
