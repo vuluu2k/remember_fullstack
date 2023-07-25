@@ -26,3 +26,7 @@ func (s *UserService) Get(ctx context.Context, uid uuid.UUID) (*model.User, erro
 
 	return u, err
 }
+
+func (s *UserService) SignUp(ctx context.Context, u *model.User) error {
+	panic("Method not implemented")
+}

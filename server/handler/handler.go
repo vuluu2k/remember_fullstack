@@ -33,12 +33,6 @@ func NewHandler(c *Config) {
 	g.PUT("/details", h.Details)
 }
 
-func (h *Handler) SignUp(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{
-		"message": "It' sign up",
-	})
-}
-
 func (h *Handler) SignIn(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"message": "It's sign in",
