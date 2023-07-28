@@ -38,7 +38,19 @@ func (h *Handler) SignUp(c *gin.Context) {
 		return
 	}
 
+	token, err := h.TokenService.NewPairFromUser(c, u, "")
+
+	if err != nil {
+		log.Printf("Failed to sign up user: %v \n", err.Error())
+
+		c.JSON(apperrors.Status(err), gin.H{
+			"error": err,
+		})
+
+		return
+	}
+
 	c.JSON(http.StatusOK, gin.H{
-		"message": "It' sign up",
+		"token": token,
 	})
 }
