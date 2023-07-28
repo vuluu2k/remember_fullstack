@@ -38,7 +38,7 @@ func (h *Handler) SignUp(c *gin.Context) {
 		return
 	}
 
-	token, err := h.TokenService.NewPairFromUser(c, u, "")
+	tokens, err := h.TokenService.NewPairFromUser(c, u, "")
 
 	if err != nil {
 		log.Printf("Failed to sign up user: %v \n", err.Error())
@@ -50,7 +50,7 @@ func (h *Handler) SignUp(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{
-		"token": token,
+	c.JSON(http.StatusCreated, gin.H{
+		"tokens": tokens,
 	})
 }
